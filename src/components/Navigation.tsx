@@ -1,13 +1,34 @@
 'use client';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@/components/images/t_logo.png'
+
 
 const Navigation = () => {
   const pathname = usePathname();
   return (
+
+    
+
     <nav>
+      
       <ul>
-        <li>
+      
+        <li className='logo'>
+        <Link href="/">
+        
+        {/* Image component for the logo */}
+        <Image
+          src={logo}
+          alt="Logo"
+          width={150} // Set the width as needed
+          height={150} // Set the height as needed
+        />
+      
+    </Link>
+    </li>
+    <li>
           <Link href='/' className={pathname == '/' ? 'active' : 'after:'}>
             Home
           </Link>
@@ -22,10 +43,10 @@ const Navigation = () => {
         </li>
         <li>
           <Link
-            href='/grocery'
-            className={pathname == '/grocery' ? 'active' : 'after:'}
+            href='/bookings'
+            className={pathname == '/bookings' ? 'active' : 'after:'}
           >
-            Grocery
+            Bookings
           </Link>
         </li>
         <li>
@@ -39,10 +60,10 @@ const Navigation = () => {
 
         <li>
           <Link
-            href='/posts'
-            className={pathname == '/posts' ? 'active' : 'after:'}
+            href='/Sale'
+            className={pathname == '/Sale' ? 'active' : 'after:'}
           >
-            Posts
+            Sale
           </Link>
         </li>
 
